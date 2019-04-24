@@ -35,7 +35,7 @@ action :configure do
 
   require 'yaml'
 
-  curatorconfig = config.to_hash.clone
+  curatorconfig = new_resource.config.to_hash.clone
 
   if !http_auth.nil? && http_auth.length > 2 && http_auth.include?(':')
     curatorconfig['client']['http_auth'] = http_auth
