@@ -25,7 +25,7 @@ action :create do
   require 'yaml'
 
   file "#{new_resource.path}/#{new_resource.name}.yml" do
-    content YAML.dump(config.to_hash)
+    content YAML.dump(new_resource.config.to_hash)
     user new_resource.username
     mode '0644'
   end
