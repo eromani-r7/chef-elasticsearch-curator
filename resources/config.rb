@@ -41,7 +41,7 @@ action :configure do
     curatorconfig['client']['http_auth'] = http_auth
   end
 
-  file "#{path}/curator.yml" do
+  file "#{new_resource.path}/curator.yml" do
     content YAML.dump(curatorconfig.to_hash)
     user user
     mode '0644'
