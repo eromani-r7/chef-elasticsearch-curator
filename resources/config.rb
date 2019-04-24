@@ -28,7 +28,7 @@ action :configure do
   end
   new_resource.updated_by_last_action(gr.updated_by_last_action?)
 
-  directory path do
+  directory new_resource.path do
     recursive true
     action :create
   end
