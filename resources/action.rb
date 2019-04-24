@@ -17,7 +17,7 @@ property :bin_path, String, default: node['elasticsearch-curator']['bin_path']
 default_action :create
 
 action :create do
-  directory path do
+  directory new_resource.path do
     recursive true
     action :create
   end
